@@ -1,0 +1,30 @@
+
+@media (max-width: 600px) {
+    .b-1{
+        order:0 !important;
+        display: flex;
+    }
+    .b-2{
+        order: 1 !important;
+        display: flex;
+    }
+    .btn{
+        width: 60% ;
+        margin: auto;
+        text-align: center;
+    }
+    .bt{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+
+}
+
+.nv{
+    padding: 30px;
+}
