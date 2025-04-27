@@ -1,103 +1,143 @@
 import React from 'react';
 import { Calendar, Clock, MapPin, Heart, Music } from 'lucide-react';
-import "./index.css"
+import { motion } from 'framer-motion';
+import "./index.css";
 
 const eventData = {
-  brideAndGroom: "Sarah & Michael",
-  date: "June 15, 2025",
-  time: "2:00 PM EST",
-  venue: "St. Patrick's Cathedral",
-  address: "5th Avenue, New York, NY",
-  description: "We joyfully invite you to join us virtually as we celebrate our love and commitment. Share in the magic of our special day through our live stream ceremony.",
-  youtubeLink: "https://youtube.com/live/example",
+  brideAndGroom: "ch. Bhargava Nandan & ch. Thaman Sandesh",
+  date: "May 4, 2025",
+  time: "10:00 AM",
+  lunchTime: "11:00 AM",
+  venue: "Mini Kammakalyana Mandapam Tanuku",
+  address: "Bypass Road, Tanuku",
   parents: {
     bride: {
-      father: "Mr. James Wilson",
-      mother: "Mrs. Emily Wilson"
+      father: "Sri. Karuturi BhimaRaju",
+      mother: "Smt. Manga (late)"
     },
     groom: {
-      father: "Mr. Robert Thompson",
-      mother: "Mrs. Sarah Thompson"
+      father: "Sri. Yannamani Ravindra Prasad",
+      mother: "Smt. Nagadhanalakshmi (satya)"
     }
   }
 };
 
+// Animation variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, delay }
+  }),
+};
+
 const InvitationCard: React.FC = () => {
   return (
-    <section id="invitation" className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-white to-rose-50">
-      {/* Decorative background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(#f43f5e_1px,transparent_1px)] [background-size:40px_40px] opacity-5"></div>
-        <div className="absolute top-0 left-0 w-64 h-64 bg-rose-100 rounded-full filter blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-rose-100 rounded-full filter blur-3xl opacity-30 translate-x-1/2 translate-y-1/2"></div>
+    <section
+      id="invitation"
+      className="py-24 px-4 bg-gradient-to-b from-white to-rose-50 relative overflow-hidden"
+    >
+      {/* Decorative Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(#f43f5e_1px,transparent_1px)] [background-size:40px_40px] opacity-5" />
+        <div className="absolute top-0 left-0 w-64 h-64 bg-rose-100 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-rose-100 rounded-full blur-3xl opacity-30 translate-x-1/2 translate-y-1/2" />
       </div>
-      
-      <div className="relative z-10 w-full max-w-4xl mx-auto">
-        {/* Traditional Wedding Card */}
-        <div className="bg-white rounded-[2rem] shadow-2xl overflow-hidden animate-fade-up border border-rose-100 mb-16">
-          <div className="relative p-8 md:p-12 bg-[url('https://images.pexels.com/photos/5560911/pexels-photo-5560911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center">
-            <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
-            <div className="relative z-10">
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-rose-600 rounded-full mb-8">
-                  <Heart size={40} className="text-white" />
-                </div>
-                
-                <div className="mb-8 font-serif">
-                  <p className="text-rose-600 text-lg mb-4">Together with their families</p>
-                  <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 font-serif leading-tight">
-                    {eventData.brideAndGroom}
-                  </h2>
-                  <p className="text-2xl text-gray-700">Request the honor of your virtual presence</p>
-                  <p className="text-xl text-gray-700 mt-2">at their wedding celebration</p>
-                </div>
 
-                <div className="space-y-2 mb-8 font-serif">
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Bride's Parents:</span><br />
-                    {eventData.parents.bride.father} & {eventData.parents.bride.mother}
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-semibold">Groom's Parents:</span><br />
-                    {eventData.parents.groom.father} & {eventData.parents.groom.mother}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-rose-50/50 p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
-                <Calendar className="w-8 h-8 text-rose-600 mx-auto mb-3" />
-                <p className="text-gray-900 font-medium text-center text-lg">{eventData.date}</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
-                <Clock className="w-8 h-8 text-rose-600 mx-auto mb-3" />
-                <p className="text-gray-900 font-medium text-center text-lg">{eventData.time}</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-2xl shadow-md transform hover:scale-105 transition-transform duration-300">
-                <MapPin className="w-8 h-8 text-rose-600 mx-auto mb-3" />
-                <p className="text-gray-900 font-medium text-center text-lg">{eventData.venue}</p>
-                <p className="text-sm text-gray-600 text-center mt-1">{eventData.address}</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href={eventData.youtubeLink} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="group inline-flex items-center justify-center px-8 py-4 bg-rose-600 text-white text-lg font-medium rounded-full hover:bg-rose-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <motion.div
+          className="bg-white/90 backdrop-blur-xl border border-rose-100 rounded-3xl shadow-2xl overflow-hidden"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+        >
+          {/* Header Section */}
+          <motion.div
+            className="relative p-10 md:p-14 text-center bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.pexels.com/photos/5560911/pexels-photo-5560911.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+            }}
+            variants={fadeUp}
+            custom={0.1}
+          >
+            <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+            <motion.div className="relative z-10">
+              <motion.div
+                className="flex justify-center mb-6"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: 'spring', stiffness: 100 }}
               >
-                <Music className="w-5 h-5 mr-2 animate-pulse" />
-                Join Live Stream
-              </a>
+                <div className="bg-rose-600 text-white p-6 rounded-full shadow-xl">
+                  <Heart size={36} />
+                </div>
+              </motion.div>
+
+              <motion.p className="text-rose-600 text-lg font-medium font-serif mb-2"
+                variants={fadeUp} custom={0.3}>
+                Together with their families
+              </motion.p>
+              <motion.h2
+                className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight font-serif mb-3"
+                variants={fadeUp}
+                custom={0.4}
+              >
+                {eventData.brideAndGroom}
+              </motion.h2>
+              <motion.p
+                className="text-xl text-gray-700 font-medium"
+                variants={fadeUp}
+                custom={0.5}
+              >
+                Request the honor of your presence
+              </motion.p>
+              <motion.p
+                className="text-lg text-gray-600"
+                variants={fadeUp}
+                custom={0.6}
+              >
+                at their Dhoti Ceremony
+              </motion.p>
+            </motion.div>
+          </motion.div>
+
+          {/* Parents */}
+      
+
+          {/* Date/Time/Venue */}
+          <motion.div className="bg-rose-50 px-6 py-10 md:px-12" variants={fadeUp} custom={0.8}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              {[Calendar, Clock, MapPin].map((Icon, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white p-6 rounded-2xl shadow-md text-center transform hover:scale-105 transition-transform duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  variants={fadeUp}
+                  custom={0.9 + index * 0.1}
+                >
+                  <Icon className="w-8 h-8 text-rose-600 mx-auto mb-3" />
+                  <p className="text-gray-900 font-semibold text-lg">
+                    {[eventData.date, eventData.time, eventData.venue][index]}
+                  </p>
+                  
+                </motion.div>
+              ))}
             </div>
-          </div>
-        </div>
+
+            {/* CTA */}
+            <motion.div className="text-center" variants={fadeUp} custom={1.3}>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-rose-600 to-pink-500 text-white text-lg font-semibold rounded-full hover:scale-105 hover:shadow-xl transition-all duration-300"
+              >
+                <Music className="w-5 h-5 animate-pulse" />
+                Join the Celebration
+              </a>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

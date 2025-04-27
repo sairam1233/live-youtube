@@ -10,21 +10,21 @@ interface Photo {
 const photos: Photo[] = [
   {
     id: 1,
-    src: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "Speaker presenting at tech conference",
-    thumbnail: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=400"
+    src: "/images/4.jpg",
+    alt: "Dhoti ceremony ritual",
+    thumbnail: "/images/4.jpg"
   },
   {
     id: 2,
-    src: "https://images.pexels.com/photos/5553050/pexels-photo-5553050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "Behind the scenes streaming setup",
-    thumbnail: "https://images.pexels.com/photos/5553050/pexels-photo-5553050.jpeg?auto=compress&cs=tinysrgb&w=400"
+    src: "/images/2.jpg",
+    alt: "Family participating in Dhoti ceremony",
+    thumbnail: "/images/2.jpg"
   },
   {
     id: 3,
-    src: "https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "Live streaming equipment",
-    thumbnail: "https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=400"
+    src: "/images/3.jpg",
+    alt: "Blessings during the Dhoti ceremony",
+    thumbnail: "/images/3.jpg"
   },
 ];
 
@@ -45,9 +45,9 @@ const PhotoGallery: React.FC = () => {
     <section id="gallery" className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Event Gallery</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Gallery</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Check out photos from our previous streams and behind-the-scenes moments
+            Explore moments from the Dhoti Ceremony of ch. Bhargava Nandan & ch. Thaman Sandesh
           </p>
         </div>
 
@@ -55,14 +55,14 @@ const PhotoGallery: React.FC = () => {
           {photos.map((photo) => (
             <div 
               key={photo.id} 
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
+              className="rounded-lg overflow-hidden  hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
               onClick={() => openLightbox(photo)}
             >
-              <div className="relative pb-[66.666%] overflow-hidden">
+              <div className="relative w-full h-64 overflow-hidden">
                 <img 
                   src={photo.thumbnail} 
                   alt={photo.alt}
-                  className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 flex items-center justify-center">

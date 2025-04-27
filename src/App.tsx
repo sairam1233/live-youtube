@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   // YouTube Live Stream URL - in a real app, this would come from config or CMS
-  const youtubeLink = "https://youtube.com/live/example";
+  const youtubeLink = "https://youtube.com/live/n_XsYASNxb0?feature=share";
 
   return (
     <div className="min-h-screen bg-white">

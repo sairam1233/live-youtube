@@ -19,12 +19,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+        font-size: 13px !important;
     }
-    
+    .nvv{
+        font-size: 15px !important;
+    }
 
 }
 
 .nv{
-    padding: 30px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.6px);
+    -webkit-backdrop-filter: blur(10.6px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    }
+.nvv{
+    font-size: 18px !important;
 }
+
