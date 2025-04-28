@@ -60,14 +60,14 @@ const HomeSection: React.FC = () => {
       <section className="container mx-auto max-w-6xl py-16">
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Watch the Live Stream</h2>
         <div className="relative w-full pb-[56.25%] h-0">
-          <iframe
-            className="absolute inset-0 w-full h-full"
-            src="https://www.youtube.com/embed/wp5z6jQbE2g?si=zE8W2whbHgiL-Y83"
-            title="Dhoti Ceremony Live Stream"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/tRXk2uhJscI?autoplay=1"
+          title="Dhoti Ceremony Live Stream"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
         </div>
       </section>
     </div>
