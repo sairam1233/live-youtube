@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   // YouTube Live Stream URL - in a real app, this would come from config or CMS
-  const youtubeLink = "https://youtube.com/live/n_XsYASNxb0?feature=share";
+  const youtubeLink = "https://live-youtube-six.vercel.app/";
 
   return (
     <div className="min-h-screen bg-white">
@@ -20,8 +20,10 @@ function App() {
         <PhotoGallery />
       </main>
       
-      <ShareButton url={youtubeLink} />
-      <Footer />
+      <ShareButton 
+        url={youtubeLink} 
+        text="||Join us live for the Dhoti Ceremony of Ch. Bhargava Nandan & Ch. Thaman Sandesh! Don’t miss it! 🎉"/>
+      <Footer/>
     </div>
   );
 }

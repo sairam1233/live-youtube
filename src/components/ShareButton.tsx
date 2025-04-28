@@ -3,31 +3,31 @@ import { Share2 } from 'lucide-react';
 
 interface ShareButtonProps {
   url: string;
+  text: string; // 👈 add text prop
 }
 
-const ShareButton: React.FC<ShareButtonProps> = ({ url }) => {
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'Check this out!',
-          text: 'I wanted to share this with you:',
-          url: url,
-        });
-        console.log('Successfully shared');
-      } catch (error) {
-        console.error('Error sharing:', error);
-      }
-    } else {
-      // Fallback if Web Share API is not supported
-      try {
-        await navigator.clipboard.writeText(url);
-        alert('Link copied to clipboard!');
-      } catch (err) {
-        console.error('Failed to copy link:', err);
-      }
+const ShareButton: React.FC<ShareButtonProps> = ({ url, text }) => {
+const handleShare = async () => {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'Check this out!',
+        url: `${text} ${url}`, // 👈 combine text + url
+      });
+      console.log('Successfully shared');
+    } catch (error) {
+      console.error('Error sharing:', error);
     }
-  };
+  } else {
+    try {
+      await navigator.clipboard.writeText(`${text} ${url}`);
+      alert('Link and message copied to clipboard!');
+    } catch (err) {
+      console.error('Failed to copy link:', err);
+    }
+  }
+};
+
 
   return (
     <div className="fixed bottom-8 right-8 z-40">

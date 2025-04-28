@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             } transition-colors duration-300`}
             style={{ fontFamily: "'Great Vibes', cursive" }}
           >
-            Livestream
+            LIVESTREAM
           </a>
 
           {/* Desktop Nav */}
