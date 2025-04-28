@@ -88,8 +88,7 @@ const Navbar: React.FC = () => {
         {isOpen && (
           <div className="md:hidden mt-4 flex flex-col space-y-4 transition-all animate-fade-in-down">
             <a href="#" className="text-gray-800 hover:text-rose-500 text-lg font-medium">Home</a>
-            <a href="#about" className="text-gray-800 hover:text-rose-500 text-lg font-medium">About</a>
-            <a href="#contact" className="text-gray-800 hover:text-rose-500 text-lg font-medium">Contact</a>
+            <a href="#gallery" className="text-gray-800 hover:text-rose-500 text-lg font-medium">Invitation</a>
           </div>
         )}
       </div>

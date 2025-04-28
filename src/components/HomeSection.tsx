@@ -6,7 +6,7 @@ const HomeSection: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-b from-rose-100 to-white flex items-center justify-center px-4 py-20 overflow-hidden">
+      <section className="hh relative min-h-screen bg-gradient-to-b from-rose-100 to-white flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-300 via-transparent to-transparent opacity-20"></div>
@@ -36,7 +36,7 @@ const HomeSection: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up delay-300">
                 <a 
                   href="#invitation" 
-                  className="inline-flex items-center px-8 py-4 bg-rose-600 text-white text-lg font-medium rounded-full hover:bg-rose-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
+                  className="bb inline-flex items-center px-8 py-4 bg-rose-600 text-white text-lg font-medium rounded-full hover:bg-rose-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
                 >
                   View Ceremony Details
                   <ArrowDown className="ml-2 group-hover:animate-bounce" />

@@ -24,6 +24,15 @@
     .nvv{
         font-size: 15px !important;
     }
+    .hh{
+        padding-top: 120px !important;
+    }
+    .bb{
+        text-align: center !important;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
 
 }
 
