@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             } transition-colors duration-300`}
             style={{ fontFamily: "'Great Vibes', cursive" }}
           >
-            Prasannababu
+            Livestream
           </a>
 
           {/* Desktop Nav */}
@@ -40,15 +40,10 @@ const Navbar: React.FC = () => {
             } hover:text-rose-500 transition-colors`}>
               Home
             </a>
-            <a href="#invitation" className={`text-base font-medium ${
+            <a href="#gallery" className={`text-base font-medium ${
               scrolled ? 'text-gray-800' : 'text-white'
             } hover:text-rose-500 transition-colors`}>
-              About
-            </a>
-            <a href="#contact" className={`text-base font-medium ${
-              scrolled ? 'text-gray-800' : 'text-white'
-            } hover:text-rose-500 transition-colors`}>
-              Contact
+              Invitation
             </a>
           </div>
 

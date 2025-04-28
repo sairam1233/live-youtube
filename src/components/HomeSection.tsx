@@ -19,7 +19,7 @@ const HomeSection: React.FC = () => {
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full mb-6 animate-fade-up">
                 <Heart size={16} className="text-rose-500" />
-                <span className="text-rose-700 font-medium">Dhoti Ceremony</span>
+                <span className="text-rose-700 font-medium">Yannamani's Dhoti Ceremony</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight font-serif animate-fade-up delay-100">

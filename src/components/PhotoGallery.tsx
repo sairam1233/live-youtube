@@ -44,6 +44,32 @@ const PhotoGallery: React.FC = () => {
   return (
     <section id="gallery" className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
+
+        {/* Video player at the top */}
+        <div className="mb-16">
+  <div className="text-center mb-8">
+    <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+      Invitation Video
+    </h2>
+    <p className="text-gray-600 max-w-xl mx-auto">
+      Watch the special invitation for the Dhoti Ceremony celebration.
+    </p>
+  </div>
+
+  <div className="relative w-full max-w-5xl mx-auto rounded-lg overflow-hidden shadow-2xl">
+    <video
+      src="/video/invitation.mp4"
+      controls
+      className="w-full h-auto object-cover"
+      poster="/images/1.jpg" // optional poster image
+    >
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
+        {/* Gallery title and description */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Gallery</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -51,11 +77,12 @@ const PhotoGallery: React.FC = () => {
           </p>
         </div>
 
+        {/* Photos grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {photos.map((photo) => (
             <div 
               key={photo.id} 
-              className="rounded-lg overflow-hidden  hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
+              className="rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
               onClick={() => openLightbox(photo)}
             >
               <div className="relative w-full h-64 overflow-hidden">
