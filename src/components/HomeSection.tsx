@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Heart, ArrowDown } from 'lucide-react';
 import "./index.css";
 
 const HomeSection: React.FC = () => {
+  const playerRef = useRef<any>(null);
+
+  useEffect(() => {
+    const loadYouTubeScript = () => {
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+    };
+
+    window.onYouTubeIframeAPIReady = () => {
+      playerRef.current = new window.YT.Player("yt-live-player", {
+        videoId: "tRXk2uhJscI",
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          modestbranding: 1,
+          rel: 0,
+          showinfo: 0,
+        },
+        events: {
+          onReady: (event: any) => event.target.playVideo(),
+        },
+      });
+    };
+
+    if (!window.YT) {
+      loadYouTubeScript();
+    } else {
+      window.onYouTubeIframeAPIReady();
+    }
+  }, []);
+
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section (unchanged) */}
       <section className="hh relative min-h-screen bg-gradient-to-b from-rose-100 to-white flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0">
@@ -44,10 +77,9 @@ const HomeSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Sample Dhoti Boy Image */}
             <div className="w-full max-w-xs mx-auto lg:max-w-md">
               <img 
-                src="/images/2.jpg"  // Path to your image in the public folder
+                src="/images/2.jpg"
                 alt="Dhoti Boy"
                 className="w-full h-auto rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300"
               />
@@ -60,14 +92,7 @@ const HomeSection: React.FC = () => {
       <section className="container mx-auto max-w-6xl py-16">
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Watch the Live Stream</h2>
         <div className="relative w-full pb-[56.25%] h-0">
-        <iframe
-          className="absolute inset-0 w-full h-full"
-          src="https://www.youtube.com/embed/tRXk2uhJscI?autoplay=1"
-          title="Dhoti Ceremony Live Stream"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+          <div id="yt-live-player" className="absolute inset-0 w-full h-full"></div>
         </div>
       </section>
     </div>
